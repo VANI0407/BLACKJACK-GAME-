@@ -1,0 +1,17 @@
+def dealer_turn(deck, dealer_hand):
+
+    print("\n========== DEALER TURN ==========")
+
+    display_hand("Dealer", dealer_hand)
+
+    while calculate_score(dealer_hand) < 17:
+
+        card = deck.pop()
+
+        dealer_hand.append(card)
+
+        print("\nDealer drew:", card[0], "of", card[1])
+
+        display_hand("Dealer", dealer_hand)
+
+    print("\nDealer stands.")
