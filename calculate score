@@ -1,0 +1,17 @@
+def calculate_score(hand):
+
+    score = 0
+    aces = 0
+
+    for card in hand:
+
+        score += card_value(card)
+
+        if card[0] == "A":
+            aces += 1
+
+    while score > 21 and aces > 0:
+        score -= 10
+        aces -= 1
+
+    return score
