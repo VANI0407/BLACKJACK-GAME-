@@ -1,0 +1,34 @@
+def player_turn(deck, player_hand):
+
+    while True:
+
+        score = calculate_score(player_hand)
+
+        if score > 21:
+            print("\nYou busted!")
+            return
+
+        if score == 21:
+            print("\nYou have Blackjack!")
+            return
+
+        print("\nYour score:", score)
+
+        choice = input("Do you want to Hit or Stand? ").lower()
+
+        if choice == "hit":
+
+            card = deck.pop()
+
+            player_hand.append(card)
+
+            print("\nYou drew:", card[0], "of", card[1])
+
+        elif choice == "stand":
+
+            print("\nYou chose Stand.")
+            return
+
+        else:
+
+            print("Please enter Hit or Stand.")
