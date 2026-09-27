@@ -1,0 +1,14 @@
+def display_hand(name, hand, hide_first=False):
+
+    print("\n" + name + "'s Cards:")
+
+    for i, card in enumerate(hand):
+
+        if hide_first and i == 0:
+            print("[Hidden Card]")
+
+        else:
+            print(card[0], "of", card[1])
+
+    if not hide_first:
+        print("Score:", calculate_score(hand))
