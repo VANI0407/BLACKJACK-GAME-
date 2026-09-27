@@ -28,3 +28,6 @@ def play_game():
 
         determine_winner(player_hand, dealer_hand)
         return "dealer"
+
+    dealer_turn(deck, dealer_hand)
+    return determine_winner(player_hand, dealer_hand)
